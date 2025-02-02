@@ -8,6 +8,8 @@ TagManager:
   - Right Hand
   - Ball
   - Weapon
+  - Meteor
+  - Energy
   layers:
   - Default
   - TransparentFX
