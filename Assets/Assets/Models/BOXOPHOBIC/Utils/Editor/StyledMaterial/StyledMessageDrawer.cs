@@ -17,32 +17,32 @@ namespace Boxophobic.StyledGUI
 
         MessageType mType;
 
-        public StyledMessageDrawer(string t, string m)
+        public StyledMessageDrawer(string type, string message)
         {
-            type = t;
-            message = m;
+            this.type = type;
+            this.message = message;
             keyword = null;
 
             this.top = 0;
             this.down = 0;
         }
 
-        public StyledMessageDrawer(string t, string m, float top, float down)
+        public StyledMessageDrawer(string type, string message, float top, float down)
         {
-            type = t;
-            message = m;
+            this.type = type;
+            this.message = message;
             keyword = null;
 
             this.top = top;
             this.down = down;
         }
 
-        public StyledMessageDrawer(string t, string m, string k, float v, float top, float down)
+        public StyledMessageDrawer(string type, string message, string keyword, float value, float top, float down)
         {
-            type = t;
-            message = m;
-            keyword = k;
-            value = v;
+            this.type = type;
+            this.message = message;
+            this.keyword = keyword;
+            this.value = value;
 
             this.top = top;
             this.down = down;
@@ -69,6 +69,8 @@ namespace Boxophobic.StyledGUI
                 mType = MessageType.Error;
             }
 
+            message = message.Replace("__", ",");
+
             if (keyword != null)
             {
                 if (material.HasProperty(keyword))
@@ -76,9 +78,9 @@ namespace Boxophobic.StyledGUI
                     if (material.GetFloat(keyword) == value)
                     {
                         GUILayout.Space(top);
-                        //EditorGUI.DrawRect(new Rect(position.x, position.y + Top, position.width, position.height), new Color(1,0,0,0.3f));
+
                         EditorGUILayout.HelpBox(message, mType);
-                        //EditorGUI.HelpBox(new Rect(position.x, position.y + top, position.width, position.height), message, mType);
+
                         GUILayout.Space(down);
 
                     }

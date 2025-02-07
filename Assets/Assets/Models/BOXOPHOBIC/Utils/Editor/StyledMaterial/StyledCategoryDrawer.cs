@@ -8,6 +8,8 @@ namespace Boxophobic.StyledGUI
 {
     public class StyledCategoryDrawer : MaterialPropertyDrawer
     {
+        public bool isEnabled = true;
+
         public string category;
         public float top;
         public float down;
@@ -58,6 +60,8 @@ namespace Boxophobic.StyledGUI
         public override void OnGUI(Rect position, MaterialProperty prop, String label, MaterialEditor materialEditor)
         {
             GUI.enabled = true;
+            //GUI.color = Color.white;
+            //GUI.contentColor = Color.white;
             EditorGUI.indentLevel = 0;
 
             if (conditions == "")
@@ -102,14 +106,18 @@ namespace Boxophobic.StyledGUI
                 isColapsable = true;
             }
 
-            bool isEnabled = true;
+            //bool isEnabled = true;
 
             if (prop.floatValue < 0.5f)
             {
                 isEnabled = false;
             }
+            else
+            {
+                isEnabled = true;
+            }
 
-            isEnabled = StyledGUI.DrawInspectorCategory(category, isEnabled, top, down, isColapsable);
+            isEnabled = StyledGUI.DrawInspectorCategory(category, isEnabled, isColapsable, top, down);
 
             if (isEnabled)
             {

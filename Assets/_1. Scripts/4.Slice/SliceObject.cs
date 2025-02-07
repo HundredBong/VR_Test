@@ -31,7 +31,7 @@ public class SliceObject : MonoBehaviour
         planeNormal.Normalize();
 
         SlicedHull hull = target.Slice(endSlicePoint.position, planeNormal);
-
+        crossSectionMaterial = target.GetComponent<Renderer>().material;
         if (hull != null)
         {
             GameObject lowerHull = hull.CreateLowerHull(target, crossSectionMaterial);
@@ -50,5 +50,6 @@ public class SliceObject : MonoBehaviour
         MeshCollider collider = slicedObject.AddComponent<MeshCollider>();
         collider.convex = true;
         rb.AddExplosionForce(cutForce, slicedObject.transform.position, 1);
+        slicedObject.gameObject.layer = 8;   
     }
 }

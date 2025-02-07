@@ -4,45 +4,78 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-public class StyledRemapSliderDrawer : MaterialPropertyDrawer
+namespace Boxophobic.StyledGUI
 {
-    public string nameMin = "";
-    public string nameMax = "";
-    public float min = 0;
-    public float max = 0;
-    public float top = 0;
-    public float down = 0;
-
-    bool showAdvancedOptions = false;
-
-    public StyledRemapSliderDrawer(string nameMin, string nameMax, float min, float max)
+    public class StyledRemapSliderDrawer : MaterialPropertyDrawer
     {
-        this.nameMin = nameMin;
-        this.nameMax = nameMax;
-        this.min = min;
-        this.max = max;
-        this.top = 0;
-        this.down = 0;
-    }
+        public string nameMin = "";
+        public string nameMax = "";
+        public float min = 0;
+        public float max = 0;
+        public float top = 0;
+        public float down = 0;
 
-    public StyledRemapSliderDrawer(string nameMin, string nameMax, float min, float max, float top, float down)
-    {
-        this.nameMin = nameMin;
-        this.nameMax = nameMax;
-        this.min = min;
-        this.max = max;
-        this.top = top;
-        this.down = down;
-    }
+        float internalValueMin;
+        float internalValueMax;
 
-    public override void OnGUI(Rect position, MaterialProperty prop, String label, MaterialEditor editor)
-    {
-        var internalPropMin = MaterialEditor.GetMaterialProperty(editor.targets, nameMin);
-        var internalPropMax = MaterialEditor.GetMaterialProperty(editor.targets, nameMax);
+        bool showAdvancedOptions = false;
 
-        if (internalPropMin.displayName != null && internalPropMax.displayName != null)
+        public StyledRemapSliderDrawer(string nameMin, string nameMax, float min, float max)
         {
-            var stylePopup = new GUIStyle(EditorStyles.popup)
+            this.nameMin = nameMin;
+            this.nameMax = nameMax;
+            this.min = min;
+            this.max = max;
+            this.top = 0;
+            this.down = 0;
+        }
+
+        public StyledRemapSliderDrawer(string nameMin, string nameMax, float min, float max, float top, float down)
+        {
+            this.nameMin = nameMin;
+            this.nameMax = nameMax;
+            this.min = min;
+            this.max = max;
+            this.top = top;
+            this.down = down;
+        }
+
+        public StyledRemapSliderDrawer()
+        {
+            this.nameMin = null;
+            this.nameMax = null;
+            this.min = 0;
+            this.max = 1;
+            this.top = 0;
+            this.down = 0;
+        }
+
+        public StyledRemapSliderDrawer(float min, float max)
+        {
+            this.nameMin = null;
+            this.nameMax = null;
+            this.min = min;
+            this.max = max;
+            this.top = 0;
+            this.down = 0;
+        }
+
+        public StyledRemapSliderDrawer(float min, float max, float top, float down)
+        {
+            this.nameMin = null;
+            this.nameMax = null;
+            this.min = min;
+            this.max = max;
+            this.top = top;
+            this.down = down;
+        }
+
+        public override void OnGUI(Rect position, MaterialProperty prop, String label, MaterialEditor editor)
+        {
+            var internalPropMin = MaterialEditor.GetMaterialProperty(editor.targets, nameMin);
+            var internalPropMax = MaterialEditor.GetMaterialProperty(editor.targets, nameMax);
+
+            var stylePopupMini = new GUIStyle(EditorStyles.popup)
             {
                 fontSize = 9,
             };
@@ -52,30 +85,19 @@ public class StyledRemapSliderDrawer : MaterialPropertyDrawer
 
             };
 
-            var internalValueMin = internalPropMin.floatValue;
-            var internalValueMax = internalPropMax.floatValue;
             Vector4 propVector = prop.vectorValue;
 
             EditorGUI.BeginChangeCheck();
 
-            if (internalValueMin <= internalValueMax)
-            {
-                propVector.w = 0;
-            }
-            else
-            {
-                propVector.w = 1;
-            }
-
             if (propVector.w == 0)
             {
-                propVector.x = internalValueMin;
-                propVector.y = internalValueMax;
+                internalValueMin = propVector.x;
+                internalValueMax = propVector.y;
             }
             else
             {
-                propVector.x = internalValueMax;
-                propVector.y = internalValueMin;
+                internalValueMin = propVector.y;
+                internalValueMax = propVector.x;
             }
 
             GUILayout.Space(top);
@@ -89,11 +111,11 @@ public class StyledRemapSliderDrawer : MaterialPropertyDrawer
                 showAdvancedOptions = !showAdvancedOptions;
             }
 
-            EditorGUILayout.MinMaxSlider(ref propVector.x, ref propVector.y, min, max);
+            EditorGUILayout.MinMaxSlider(ref internalValueMin, ref internalValueMax, min, max);
 
             GUILayout.Space(2);
 
-            propVector.w = (float)EditorGUILayout.Popup((int)propVector.w, new string[] { "Remap", "Invert" }, stylePopup, GUILayout.Width(50));
+            propVector.w = (float)EditorGUILayout.Popup((int)propVector.w, new string[] { "Remap", "Invert" }, stylePopupMini, GUILayout.Width(50));
 
             GUILayout.EndHorizontal();
 
@@ -102,42 +124,48 @@ public class StyledRemapSliderDrawer : MaterialPropertyDrawer
                 GUILayout.BeginHorizontal();
                 GUILayout.Space(-1);
                 GUILayout.Label("      Remap Min", GUILayout.Width(EditorGUIUtility.labelWidth));
-                propVector.x = EditorGUILayout.Slider(propVector.x, min, max);
+                internalValueMin = Mathf.Clamp(EditorGUILayout.Slider(internalValueMin, min, max), min, internalValueMax);
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
                 GUILayout.Space(-1);
                 GUILayout.Label("      Remap Max", GUILayout.Width(EditorGUIUtility.labelWidth));
-                propVector.y = EditorGUILayout.Slider(propVector.y, min, max);
+                internalValueMax = Mathf.Clamp(EditorGUILayout.Slider(internalValueMax, min, max), internalValueMin, max);
                 GUILayout.EndHorizontal();
-            }
-
-            if (propVector.w == 0f)
-            {
-                internalValueMin = propVector.x;
-                internalValueMax = propVector.y;
-            }
-            else if (propVector.w == 1f)
-            {
-                internalValueMin = propVector.y;
-                internalValueMax = propVector.x;
             }
 
             EditorGUI.showMixedValue = false;
 
             if (EditorGUI.EndChangeCheck())
             {
+                if (propVector.w == 0)
+                {
+                    propVector.x = internalValueMin;
+                    propVector.y = internalValueMax;
+                }
+                else
+                {
+                    propVector.y = internalValueMin;
+                    propVector.x = internalValueMax;
+                }
+
+                propVector.z = 1 / (propVector.y - propVector.x);
+
                 prop.vectorValue = propVector;
-                internalPropMin.floatValue = internalValueMin;
-                internalPropMax.floatValue = internalValueMax;
+
+                if (internalPropMin.displayName != null && internalPropMax.displayName != null)
+                {
+                    internalPropMin.floatValue = internalValueMin;
+                    internalPropMax.floatValue = internalValueMax;
+                }
             }
 
             GUILayout.Space(down);
         }
-    }
 
-    public override float GetPropertyHeight(MaterialProperty prop, string label, MaterialEditor editor)
-    {
-        return -2;
+        public override float GetPropertyHeight(MaterialProperty prop, string label, MaterialEditor editor)
+        {
+            return -2;
+        }
     }
 }
