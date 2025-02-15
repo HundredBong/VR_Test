@@ -8,19 +8,23 @@ using Unity.XR.CoreUtils;
 
 public class NetworkPlayer : MonoBehaviour
 {
+    public List<GameObject> avatars;
+
     public Transform head;
     public Transform leftHand;
     public Transform rightHand;
     private PhotonView photonview;
 
-    public Animator leftHandAnimator;
-    public Animator rightHandAnimator;
+    private Animator leftHandAnimator;
+    private Animator rightHandAnimator;
 
     private Transform headRig;
     private Transform leftHandRig;
     private Transform rightHandRig;
 
     private XROrigin origin;
+
+    private GameObject spawnAvatar;
 
     private void Awake()
     {
@@ -37,14 +41,21 @@ public class NetworkPlayer : MonoBehaviour
         if (headRig == null) { Debug.LogError("headRig 할당 안됨"); }
         if (leftHandRig == null) { Debug.LogError("leftHandRig 할당 안됨"); }
         if (rightHandRig == null) { Debug.LogError("rightHandRig 할당 안됨"); }
-        
+
+        //if (photonview.IsMine)
+        //{
+        //    foreach (var item in GetComponentsInChildren<Renderer>())
+        //    {
+        //        item.enabled = false;
+        //    }
+        //}
+
         if (photonview.IsMine)
         {
-            foreach (var item in GetComponentsInChildren<Renderer>())
-            {
-                item.enabled = false;
-            }
+            photonview.RPC("LoadAvatar", RpcTarget.AllBuffered, PlayerPrefs.GetInt("AvatarID"));
         }
+
+        //LoadAvatar(PlayerPrefs.GetInt("AvatarID"));
     }
 
     private void Update()
@@ -66,14 +77,32 @@ public class NetworkPlayer : MonoBehaviour
             {
                 Debug.LogWarning("leftHandRig 또는 rightHandRig가 null임");
             }
-            
+
             UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.LeftHand), leftHandAnimator);
         }
     }
 
+    [PunRPC]
+    public void LoadAvatar(int index)
+    {
+        if (spawnAvatar)
+        {
+            Destroy(spawnAvatar);
+        }
+        spawnAvatar = Instantiate(avatars[index], transform);
+        AvatarInfo avatarInfo = spawnAvatar.GetComponent<AvatarInfo>();
+
+        avatarInfo.head.SetParent(head, false);
+        avatarInfo.leftHand.SetParent(leftHand, false);
+        avatarInfo.rightHand.SetParent(rightHand, false);
+
+        leftHandAnimator = avatarInfo.leftHandAnimator;
+        rightHandAnimator = avatarInfo.rightHandAnimator;
+    }
+
     private void UpdateHandAnimation(InputDevice targetDevice, Animator handAnimator)
     {
-      
+        if (handAnimator == null) { return; }
         if (targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggetValue))
         {
             handAnimator.SetFloat("Trigger", triggetValue);
@@ -90,7 +119,7 @@ public class NetworkPlayer : MonoBehaviour
             handAnimator.SetFloat("Grip", gripValue);
             //Debug.Log($"Grip Value : {gripValue}");
         }
-        else 
+        else
         {
             handAnimator.SetFloat("Grip", 0);
             //Debug.LogWarning($"Grip Value : {gripValue}");
