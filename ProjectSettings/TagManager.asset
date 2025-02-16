@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - Meteor
   - Energy
+  - Drum Stick
   layers:
   - Default
   - TransparentFX
