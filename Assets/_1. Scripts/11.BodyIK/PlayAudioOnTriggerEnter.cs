@@ -12,6 +12,10 @@ public class PlayAudioOnTriggerEnter : MonoBehaviour
     public float minVelocity = 0;
     public float maxVelocity = 2;
 
+    public bool randomizePitch = true;
+    public float minPitch = 0.8f;
+    public float maxPitch = 1.2f;
+
     private void Awake()
     {
         source = GetComponent<AudioSource>();
@@ -21,16 +25,33 @@ public class PlayAudioOnTriggerEnter : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
+            //source.PlayOneShot(clip);
+
             VelocityEstimator estimator = other.GetComponent<VelocityEstimator>();
 
             if (estimator && useVelocity)
             {
                 float v = estimator.GetVelocityEstimate().magnitude;
-                float volume = Mathf.InverseLerp(minVelocity, minVelocity, v);
+                Debug.Log(estimator);
+                Debug.Log(estimator.GetVelocityEstimate());
+                Debug.Log(estimator.GetVelocityEstimate().magnitude);
+
+                float volume = Mathf.InverseLerp(minVelocity, maxVelocity, v);
+                Debug.Log(volume);
+
+                if (randomizePitch)
+                {
+                    source.pitch = Random.Range(minPitch, maxPitch);
+                }
+
                 source.PlayOneShot(clip, volume);
             }
             else
             {
+                if (randomizePitch)
+                {
+                    source.pitch = Random.Range(minPitch, maxPitch);
+                }
                 source.PlayOneShot(clip);
             }
             Debug.Log("클립 재생");

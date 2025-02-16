@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.cognitive3d.c3d-sdk": "https://github.com/CognitiveVR/cvr-sdk-unity.git",
     "com.meta.xr.sdk.voice": "71.0.0",
     "com.srcnalt.openai-unity": "https://github.com/srcnalt/OpenAI-Unity.git",
     "com.unity.ai.navigation": "1.1.5",

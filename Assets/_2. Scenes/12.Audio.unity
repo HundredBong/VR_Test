@@ -310,7 +310,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!65 &1068545001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!65 &1381115744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5405,6 +5405,9 @@ MonoBehaviour:
   useVelocity: 1
   minVelocity: 0
   maxVelocity: 2
+  randomizePitch: 1
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!65 &7150458414383810659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5764,6 +5767,9 @@ MonoBehaviour:
   useVelocity: 1
   minVelocity: 0
   maxVelocity: 2
+  randomizePitch: 1
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!65 &7588694440297131524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5934,6 +5940,9 @@ MonoBehaviour:
   useVelocity: 1
   minVelocity: 0
   maxVelocity: 2
+  randomizePitch: 1
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!65 &7612253581123012927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6083,6 +6092,9 @@ MonoBehaviour:
   useVelocity: 1
   minVelocity: 0
   maxVelocity: 2
+  randomizePitch: 1
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!65 &7618931183610931919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6477,7 +6489,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6579,6 +6591,9 @@ MonoBehaviour:
   useVelocity: 1
   minVelocity: 0
   maxVelocity: 2
+  randomizePitch: 1
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!65 &8159022682603170775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6819,6 +6834,9 @@ MonoBehaviour:
   useVelocity: 1
   minVelocity: 0
   maxVelocity: 2
+  randomizePitch: 1
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!65 &8222659566044463051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7352,6 +7370,9 @@ MonoBehaviour:
   useVelocity: 1
   minVelocity: 0
   maxVelocity: 2
+  randomizePitch: 1
+  minPitch: 0.8
+  maxPitch: 1.2
 --- !u!65 &8754865755138113609
 BoxCollider:
   m_ObjectHideFlags: 0
