@@ -1321,7 +1321,7 @@ MonoBehaviour:
   defalultRooms:
   - Name: I Hate PUN
     sceneIndex: 1
-    maxPlayer: 2
+    maxPlayer: 10
   - Name: I'm Not Network Engiener
     sceneIndex: 2
     maxPlayer: 3
@@ -2503,8 +2503,8 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 800131185}
-  - {fileID: 651157809}
   - {fileID: 869958856}
+  - {fileID: 651157809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

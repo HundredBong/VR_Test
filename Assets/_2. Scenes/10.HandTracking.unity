@@ -589,7 +589,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uC624\uB978\uC190 \uB530\uBD09"
+          m_StringArgument: "\uC624\uB978\uC190 \uC5C4\uC9C0"
           m_BoolArgument: 0
         m_CallState: 2
   m_GestureEnded:
@@ -1204,6 +1204,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 868471399675121605, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 953294873263145474, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1229,6 +1234,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1022941789137154502, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1082445709365083137, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1279,6 +1289,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1860601938827237890, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1935104295897819590, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1302,6 +1317,31 @@ PrefabInstance:
     - target: {fileID: 1935104295897819590, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012398314399966209, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620688548174695865, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623281587802172043, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763119678662481032, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765729521481544634, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900054082415687576, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
@@ -1852,6 +1892,16 @@ PrefabInstance:
     - target: {fileID: 5131395975997198606, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258096171217233553, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388509237673089170, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6341867439136929035, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
@@ -2233,6 +2283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Left and Right Hand Shape Debug UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968665556766569178, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7995496182427967695, guid: 47e492fec7d311f48b7eabcbb4e2e47d,
         type: 3}
@@ -2708,11 +2763,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1713532860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1592871485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3046,7 +3101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC0D8\uD50C \uD14D\uC2A4\uD2B8 "
+  m_text: Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04d6097d33f32f046b6d59cd94d3a9c6, type: 2}
   m_sharedMaterial: {fileID: 1004338876083672979, guid: 04d6097d33f32f046b6d59cd94d3a9c6,
@@ -3343,7 +3398,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\uC67C\uC190 \uB530\uBD09"
+          m_StringArgument: "\uC67C\uC190 \uC5C4\uC9C0"
           m_BoolArgument: 0
         m_CallState: 2
   m_GestureEnded:

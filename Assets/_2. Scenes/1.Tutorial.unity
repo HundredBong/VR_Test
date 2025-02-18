@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 2
-  head: {fileID: 0}
+  head: {fileID: 1671251045}
   menu: {fileID: 1853880730}
   menuButton:
     m_UseReference: 1
@@ -3739,6 +3739,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624901526}
   m_CullTransparentMesh: 1
+--- !u!4 &1671251045 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 667700212830950112, guid: b2a74f1f832aa5e4cbbfbc59330f0e2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 564838988268857607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1708458899
 GameObject:
   m_ObjectHideFlags: 0
@@ -4672,6 +4678,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2868042748618563165, guid: b2a74f1f832aa5e4cbbfbc59330f0e2d,
+        type: 3}
+      propertyPath: m_RotationAction.m_Reference
+      value: 
+      objectReference: {fileID: 8248158260566104461, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
+    - target: {fileID: 3808250112448893778, guid: b2a74f1f832aa5e4cbbfbc59330f0e2d,
+        type: 3}
+      propertyPath: m_RotationAction.m_Reference
+      value: 
+      objectReference: {fileID: 5101698808175986029, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 7496806458590439866, guid: b2a74f1f832aa5e4cbbfbc59330f0e2d,
         type: 3}
       propertyPath: m_InteractionManager

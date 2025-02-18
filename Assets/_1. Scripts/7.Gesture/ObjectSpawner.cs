@@ -8,9 +8,13 @@ public class ObjectSpawner : MonoBehaviour
 
     public void Spawn(string objectName)
     {
+        Debug.Log($"아이템 : {""}, 오브젝트 : {objectName}");
+
         foreach (var item in objects)
         {
-            item.SetActive(objectName == item.name);
+            Debug.Log($"아이템 : {item.name}, 오브젝트 : {objectName}");
+            if (item.name == objectName)
+                item.SetActive(false);
         }
     }
 }
