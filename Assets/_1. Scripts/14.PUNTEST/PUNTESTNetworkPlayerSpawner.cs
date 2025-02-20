@@ -11,6 +11,7 @@ public class PUNTESTNetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         Debug.Log("PlayerSpawner, 방에 참여함");
+        Debug.Log(PhotonNetwork.CurrentRoom.Name);
         spawnPlayerPrefab = PhotonNetwork.Instantiate("PUNTEST Network Player", transform.position, transform.rotation);
     }
 

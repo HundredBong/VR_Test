@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_2. Scenes/15.PUN_Lobby.unity
-    guid: dc8893cb62fee6f41b71f3a52f83dba3
-  - enabled: 1
-    path: Assets/_2. Scenes/14.PUN_Room.unity
-    guid: ddbe4e24f40258244825c5679404d9c2
+    path: Assets/_2. Scenes/ToggleTest.unity
+    guid: 627ebc882cbd86144a0218add0b14600
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 65bdcd3db170ea146b00201b52b757fb,
       type: 2}
