@@ -11,60 +11,60 @@ public class PUNTESTNetworkManager : MonoBehaviourPunCallbacks
     public GameObject roomUI;
     public List<PUNTESTDefaultRoom> defaultRooms;
 
-    #region IPÅ×½ºÆ®
-    //[System.Serializable]
-    //private class IPResponse
-    //{
-    //    public string ip;
-    //}
+    #region IPí…ŒìŠ¤íŠ¸
+    [System.Serializable]
+    private class IPResponse
+    {
+        public string ip;
+    }
 
-    //private string routerIP;
-    //public void GetRouterIP()
-    //{
-    //    //³ªÁß¿¡ Å×½ºÆ®ÇÒ ¶§ ¹öÆ°¿¡ ConnectToServer´ë½Å ÀÌ ¸Ş¼­µå ¿¬°áÇØº¸±â
-    //    StartCoroutine(GetRouterIPCoroutine());
-    //}
+    private string routerIP;
+    public void GetRouterIP()
+    {
+        //ë‚˜ì¤‘ì— í…ŒìŠ¤íŠ¸í•  ë•Œ ë²„íŠ¼ì— ConnectToServerëŒ€ì‹  ì´ ë©”ì„œë“œ ì—°ê²°í•´ë³´ê¸°
+        StartCoroutine(GetRouterIPCoroutine());
+    }
 
-    //private IEnumerator GetRouterIPCoroutine()
-    //{
-    //    //¸®¼Ò½º ÀÚµ¿ Á¤¸®¿ë using¹® »ç¿ë
-    //    using (UnityWebRequest www = UnityWebRequest.Get("https://api64.ipify.org?format=json"))
-    //    {
-    //        //À¥ ¿äÃ»ÀÌ ³¡³¯¶§±îÁö ´ë±â
-    //        yield return www.SendWebRequest();
+    private IEnumerator GetRouterIPCoroutine()
+    {
+        //ë¦¬ì†ŒìŠ¤ ìë™ ì •ë¦¬ìš© usingë¬¸ ì‚¬ìš©
+        using (UnityWebRequest www = UnityWebRequest.Get("https://api64.ipify.org?format=json"))
+        {
+            //ì›¹ ìš”ì²­ì´ ëë‚ ë•Œê¹Œì§€ ëŒ€ê¸°
+            yield return www.SendWebRequest();
 
-    //        if (www.result != UnityWebRequest.Result.Success)
-    //        {
-    //            Debug.LogError("¾Æ ÀÌ°Ô ¾ÈµÇ³×");
-    //        }
-    //        else
-    //        {
-    //            routerIP = JsonUtility.FromJson<IPResponse>(www.downloadHandler.text).ip;
-    //            Debug.Log($"°¡Á®¿Â ¾ÆÀÌÇÇ ÁÖ¼Ò : {routerIP}");
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("ì•„ ì´ê²Œ ì•ˆë˜ë„¤");
+            }
+            else
+            {
+                routerIP = JsonUtility.FromJson<IPResponse>(www.downloadHandler.text).ip;
+                Debug.Log($"ê°€ì ¸ì˜¨ ì•„ì´í”¼ ì£¼ì†Œ : {routerIP}");
 
-    //            //TODO : Á¤»óÀûÀ¸·Î °¡Á®¿ÍÁö¸é JoinOrCreateRoomÀÇ ¹æ ÀÌ¸§¿¡ routerIP³Ö°í µ¹·Áº¸±â
-    //        }
-    //    }
-    //}
+                //TODO : ì •ìƒì ìœ¼ë¡œ ê°€ì ¸ì™€ì§€ë©´ JoinOrCreateRoomì˜ ë°© ì´ë¦„ì— routerIPë„£ê³  ëŒë ¤ë³´ê¸°
+            }
+        }
+    }
 
     #endregion
     private void Start()
     {
 
-
+        //GetRouterIP();
     }
 
 
     public void ConnectToServer()
     {
-        Debug.Log("¼­¹ö ¿¬°á ½Ãµµ");
+        Debug.Log("ì„œë²„ ì—°ê²° ì‹œë„");
         PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
         base.OnConnected();
-        Debug.Log("¼­¹ö ¿¬°áµÊ");
+        Debug.Log("ì„œë²„ ì—°ê²°ë¨");
         PhotonNetwork.JoinLobby();
     }
 
@@ -85,20 +85,20 @@ public class PUNTESTNetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
-        Debug.Log("·Îºñ¿¡ ÀÔÀåÇÔ");
+        Debug.Log("ë¡œë¹„ì— ì…ì¥í•¨");
         roomUI.SetActive(true);
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        Debug.Log("¹æ¿¡ Âü¿©ÇÔ");
+        Debug.Log("ë°©ì— ì°¸ì—¬í•¨");
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-        Debug.Log("»õ·Î¿î ÇÃ·¹ÀÌ¾î°¡ ¹æ¿¡ Âü¿©ÇÔ");
+        Debug.Log("ìƒˆë¡œìš´ í”Œë ˆì´ì–´ê°€ ë°©ì— ì°¸ì—¬í•¨");
     }
 }
 

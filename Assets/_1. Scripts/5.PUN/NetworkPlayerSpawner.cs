@@ -10,18 +10,18 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        Debug.Log($"¹æ Âü°¡ ¿©ºÎ: {PhotonNetwork.InRoom}");
+        //Debug.Log($"ë°© ì°¸ê°€ ì—¬ë¶€: {PhotonNetwork.InRoom}");
     }
 
     public override void OnJoinedRoom()
     {
-        //³×Æ®¿öÅ©¿¡¼­ µ¿±âÈ­µÈ ¿ÀºêÁ§Æ® »ı¼º, ¸ğµç Å¬¶óÀÌ¾ğÆ®¿¡ µ¿ÀÏÇÏ°Ô »ı¼ºµÊ
-        //Ã¹ ¹øÂ° ÀÎÀÚ·Î´Â ÇÁ¸®ÆÕ ÀÌ¸§, Resources/ Æú´õ ¾È¿¡ µ¿ÀÏÇÑ ÀÌ¸§ÀÇ ÇÁ¸®ÆÕÀÌ ÀÖ¾î¾ß ÇÔ
-        //µÎ ¹øÂ° ÀÎÀÚ·Î´Â ¿ÀºêÁ§Æ®¸¦ »ı¼ºÇÒ ¿ùµå ÁÂÇ¥, ¼¼ ¹øÂ° ÀÎÀÚ·Î´Â »ı¼ºµÉ ¶§ È¸Àü °ª
+        //ë„¤íŠ¸ì›Œí¬ì—ì„œ ë™ê¸°í™”ëœ ì˜¤ë¸Œì íŠ¸ ìƒì„±, ëª¨ë“  í´ë¼ì´ì–¸íŠ¸ì— ë™ì¼í•˜ê²Œ ìƒì„±ë¨
+        //ì²« ë²ˆì§¸ ì¸ìë¡œëŠ” í”„ë¦¬íŒ¹ ì´ë¦„, Resources/ í´ë” ì•ˆì— ë™ì¼í•œ ì´ë¦„ì˜ í”„ë¦¬íŒ¹ì´ ìˆì–´ì•¼ í•¨
+        //ë‘ ë²ˆì§¸ ì¸ìë¡œëŠ” ì˜¤ë¸Œì íŠ¸ë¥¼ ìƒì„±í•  ì›”ë“œ ì¢Œí‘œ, ì„¸ ë²ˆì§¸ ì¸ìë¡œëŠ” ìƒì„±ë  ë•Œ íšŒì „ ê°’
         base.OnJoinedRoom();
-
-        spawnPlayerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
-        Debug.Log($"ÇÁ¸®ÆÕ »ı¼º {spawnPlayerPrefab.name}");
+        Debug.Log($"í¬í†¤ ë„¤íŠ¸ì›Œí¬ í”Œë ˆì´ì–´ ë¦¬ìŠ¤íŠ¸ {PhotonNetwork.PlayerList.Length}");
+        spawnPlayerPrefab = PhotonNetwork.Instantiate($"Network Player{PhotonNetwork.PlayerList.Length}", transform.position, transform.rotation);
+        Debug.Log($"í”„ë¦¬íŒ¹ ìƒì„± {spawnPlayerPrefab.name}");
 
     }
 
@@ -29,16 +29,16 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
     {
         base.OnLeftRoom();
 
-        //¸ğµç Å¬¶óÀÌ¾ğÆ®¿¡¼­ µ¿½Ã¿¡ »ç¶óÁö³ª, ÀÚ±â°¡ »ı¼ºÇÑ ¿ÀºêÁ§Æ®¸¸ »èÁ¦ÇÒ ¼ö ÀÖÀ½
-        //´Ù¸¥ »ç¶÷ÀÌ ¸¸µç ³×Æ®¿öÅ© ¿ÀºêÁ§Æ®´Â »èÁ¦ ¸øÇÔ
+        //ëª¨ë“  í´ë¼ì´ì–¸íŠ¸ì—ì„œ ë™ì‹œì— ì‚¬ë¼ì§€ë‚˜, ìê¸°ê°€ ìƒì„±í•œ ì˜¤ë¸Œì íŠ¸ë§Œ ì‚­ì œí•  ìˆ˜ ìˆìŒ
+        //ë‹¤ë¥¸ ì‚¬ëŒì´ ë§Œë“  ë„¤íŠ¸ì›Œí¬ ì˜¤ë¸Œì íŠ¸ëŠ” ì‚­ì œ ëª»í•¨
         PhotonNetwork.Destroy(spawnPlayerPrefab);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Debug.Log($"OnPlayerEnteredRoom ½ÇÇàµÊ - ÇöÀç Å¬¶óÀÌ¾ğÆ® {PhotonNetwork.LocalPlayer.NickName}");
+        Debug.Log($"OnPlayerEnteredRoom ì‹¤í–‰ë¨ - í˜„ì¬ í´ë¼ì´ì–¸íŠ¸ {PhotonNetwork.LocalPlayer.NickName}");
 
-        Debug.Log("»õ·Î¿î ÇÃ·¹ÀÌ¾î°¡ Âü°¡ÇÔ");
+        Debug.Log("ìƒˆë¡œìš´ í”Œë ˆì´ì–´ê°€ ì°¸ê°€í•¨");
         base.OnPlayerEnteredRoom(newPlayer);
     }
 }

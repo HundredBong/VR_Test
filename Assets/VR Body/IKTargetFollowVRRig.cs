@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using System.Collections;
+using UnityEngine;
 
 [System.Serializable]
 public class VRMap
@@ -12,6 +13,7 @@ public class VRMap
         ikTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
         ikTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
     }
+
 }
 
 public class IKTargetFollowVRRig : MonoBehaviour
@@ -25,8 +27,11 @@ public class IKTargetFollowVRRig : MonoBehaviour
     public Vector3 headBodyPositionOffset;
     public float headBodyYawOffset;
 
-    // Update is called once per frame
-    void LateUpdate()
+
+    public Transform headIK;
+    public Vector3 headIKOffset;
+
+    private void LateUpdate()
     {
         transform.position = head.ikTarget.position + headBodyPositionOffset;
         float yaw = head.vrTarget.eulerAngles.y;
@@ -35,5 +40,15 @@ public class IKTargetFollowVRRig : MonoBehaviour
         head.Map();
         leftHand.Map();
         rightHand.Map();
+    }
+    public void headMap()
+    {
+        headIK.transform.position += headIKOffset;
+    }
+
+    public IEnumerator Start()
+    {
+        yield return null;
+        headMap();
     }
 }

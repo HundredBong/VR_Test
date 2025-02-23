@@ -1,0 +1,676 @@
+{
+  "extensionsUsed": [
+    "KHR_lights_punctual"
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 121,
+      "type": "VEC3",
+      "max": [
+        5.0,
+        1.1102230246251565E-16,
+        5.0
+      ],
+      "min": [
+        -5.0,
+        -1.1102230246251565E-16,
+        -5.0
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 121,
+      "type": "VEC3",
+      "max": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 121,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "min": [
+        1.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 121,
+      "type": "VEC2",
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5121,
+      "count": 600,
+      "type": "SCALAR",
+      "max": [
+        120.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC3",
+      "max": [
+        0.5,
+        1.0,
+        0.50000005960464478
+      ],
+      "min": [
+        -0.50000011920928955,
+        -1.0,
+        -0.5000002384185791
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC2",
+      "max": [
+        0.99974912405014038,
+        0.99954628944396973
+      ],
+      "min": [
+        0.00069368560798466206,
+        0.00056922435760498047
+      ]
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 88,
+      "type": "VEC2",
+      "max": [
+        0.99716836214065552,
+        0.99739980697631836
+      ],
+      "min": [
+        0.0043606190010905266,
+        0.0021193623542785645
+      ]
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5121,
+      "count": 240,
+      "type": "SCALAR",
+      "max": [
+        87.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "max": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "min": [
+        -0.5,
+        -0.5,
+        -0.5
+      ]
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2",
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2",
+      "max": [
+        0.9966580867767334,
+        0.99594426155090332
+      ],
+      "min": [
+        0.0040557663887739182,
+        0.34716415405273438
+      ]
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5121,
+      "count": 36,
+      "type": "SCALAR",
+      "max": [
+        23.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "scene.bin",
+      "byteLength": 12956
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1452
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1452,
+      "byteLength": 1452
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2904,
+      "byteLength": 1936
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4840,
+      "byteLength": 968
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5808,
+      "byteLength": 600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6408,
+      "byteLength": 1056
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7464,
+      "byteLength": 1056
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8520,
+      "byteLength": 1408
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9928,
+      "byteLength": 704
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10632,
+      "byteLength": 704
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11336,
+      "byteLength": 240
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11576,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 11864,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12152,
+      "byteLength": 384
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12536,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12728,
+      "byteLength": 192
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12920,
+      "byteLength": 36
+    }
+  ],
+  "cameras": [
+    {
+      "perspective": {
+        "aspectRatio": 1.7777777910232544,
+        "yfov": 1.0471975803375244,
+        "zfar": 998.65380859375,
+        "znear": 0.0099999997764825821
+      },
+      "type": "perspective",
+      "name": "Main Camera"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      },
+      "name": "Black"
+    },
+    {
+      "name": "Teleportation_Anchor_Mat"
+    },
+    {
+      "name": "Hologram Red"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "Plane"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8,
+            "TEXCOORD_1": 9
+          },
+          "indices": 10,
+          "material": 1
+        }
+      ],
+      "name": "Reticle (1)"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8,
+            "TEXCOORD_1": 9
+          },
+          "indices": 10,
+          "material": 1
+        }
+      ],
+      "name": "Reticle"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 11,
+            "NORMAL": 12,
+            "TANGENT": 13,
+            "TEXCOORD_0": 14,
+            "TEXCOORD_1": 15
+          },
+          "indices": 16,
+          "material": 2
+        }
+      ],
+      "name": "Cube"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 11,
+            "NORMAL": 12,
+            "TANGENT": 13,
+            "TEXCOORD_0": 14,
+            "TEXCOORD_1": 15
+          },
+          "indices": 16,
+          "material": 2
+        }
+      ],
+      "name": "Cube (1)"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 11,
+            "NORMAL": 12,
+            "TANGENT": 13,
+            "TEXCOORD_0": 14,
+            "TEXCOORD_1": 15
+          },
+          "indices": 16,
+          "material": 2
+        }
+      ],
+      "name": "Cube (2)"
+    }
+  ],
+  "nodes": [
+    {
+      "rotation": [
+        0.109381631,
+        0.8754261,
+        0.408217877,
+        -0.234569684
+      ],
+      "translation": [
+        0.0,
+        3.0,
+        0.0
+      ],
+      "extensions": {
+        "KHR_lights_punctual": {
+          "light": 0
+        }
+      },
+      "name": "Directional Light"
+    },
+    {
+      "mesh": 0,
+      "name": "Plane"
+    },
+    {
+      "name": "NetworkManager"
+    },
+    {
+      "name": "XR Interaction Manager"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "XR Origin (XR Rig)"
+    },
+    {
+      "children": [
+        6,
+        7,
+        9,
+        11,
+        12
+      ],
+      "translation": [
+        0.0,
+        1.1176,
+        0.0
+      ],
+      "name": "Camera Offset"
+    },
+    {
+      "camera": 0,
+      "name": "Main Camera"
+    },
+    {
+      "children": [
+        8
+      ],
+      "name": "Leftt Teleportaion Ray"
+    },
+    {
+      "mesh": 1,
+      "scale": [
+        0.5,
+        0.01,
+        0.5
+      ],
+      "name": "Reticle (1)"
+    },
+    {
+      "children": [
+        10
+      ],
+      "name": "Right Teleportaion Ray"
+    },
+    {
+      "mesh": 2,
+      "scale": [
+        0.5,
+        0.01,
+        0.5
+      ],
+      "name": "Reticle"
+    },
+    {
+      "translation": [
+        0.0,
+        -1.1176,
+        0.0
+      ],
+      "name": "Left Grab Ray"
+    },
+    {
+      "translation": [
+        0.0,
+        -1.1176,
+        0.0
+      ],
+      "name": "Right Grab Ray"
+    },
+    {
+      "mesh": 3,
+      "scale": [
+        2.0,
+        1.0,
+        0.5
+      ],
+      "translation": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "name": "Cube"
+    },
+    {
+      "mesh": 4,
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "translation": [
+        -0.616,
+        1.181,
+        0.993
+      ],
+      "name": "Cube (1)"
+    },
+    {
+      "mesh": 5,
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "translation": [
+        0.586,
+        1.181,
+        0.986
+      ],
+      "name": "Cube (2)"
+    },
+    {
+      "translation": [
+        2.8357625,
+        1.93196261,
+        0.232553735
+      ],
+      "name": "Cognitive3D"
+    },
+    {
+      "name": "Cognitive3D_Manager"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "name": "scene"
+    }
+  ],
+  "extensions": {
+    "KHR_lights_punctual": {
+      "lights": [
+        {
+          "type": "directional",
+          "color": [
+            1.0,
+            0.956862748,
+            0.8392157
+          ],
+          "name": "Directional Light"
+        }
+      ]
+    }
+  }
+}
