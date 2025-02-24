@@ -12,10 +12,12 @@ namespace Timeline
 
         private void Start()
         {
+            PhotonNetwork.AutomaticallySyncScene = true;
             if (PhotonNetwork.IsConnected == false)
             {
                 PhotonNetwork.ConnectUsingSettings();
             }
+
         }
 
         public override void OnConnectedToMaster()
