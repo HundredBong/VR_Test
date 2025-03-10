@@ -13,7 +13,7 @@ public class VRMap
         ikTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
         ikTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
     }
-
+     
 }
 
 public class IKTargetFollowVRRig : MonoBehaviour

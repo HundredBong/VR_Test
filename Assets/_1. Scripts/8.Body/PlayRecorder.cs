@@ -12,11 +12,17 @@ public class PlayRecorder : MonoBehaviour
     public UnityEngine.Events.UnityEvent onRecordingEnd;
     public UnityEngine.UI.Slider slider;
 
-    private void Start()
+    private void Awake()
     {
         recorder = GetComponent<UnityAnimationRecorder>();
+    }
+
+    
+    private void Start()
+    {
+
         if (playOnStart)
-            StartCoroutine(RecordingRoutine());
+            StartCoroutine(RecordingCoroutine());
     }
 
     public void SetDuration(float _duration)
@@ -26,10 +32,10 @@ public class PlayRecorder : MonoBehaviour
 
     public void Play()
     {
-        StartCoroutine(RecordingRoutine());
+        StartCoroutine(RecordingCoroutine());
     }
 
-    private IEnumerator RecordingRoutine()
+    private IEnumerator RecordingCoroutine()
     {
         recorder.StartRecording();
         float time = 0;
