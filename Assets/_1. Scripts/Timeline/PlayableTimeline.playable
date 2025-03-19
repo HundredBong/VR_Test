@@ -1,0 +1,240 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7808629292300759559
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5964a56f5448b40ad8a768b3091a74, type: 3}
+  m_Name: Simple Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 5.683333333333334
+  <parent>k__BackingField: {fileID: -6065074836646191838}
+  eventName: 
+--- !u!114 &-6562106472907351752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 7.15
+  eventName: 
+  markColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &-6065074836646191838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -3061508238021683575}
+    - {fileID: 2969986843855833149}
+    - {fileID: 8878763921380815964}
+    - {fileID: -7808629292300759559}
+    - {fileID: 8404886228359605541}
+    - {fileID: 4892788819859691679}
+    - {fileID: 3732743158924952703}
+    - {fileID: 6421239471522744755}
+--- !u!114 &-3061508238021683575
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bdf17f46577fb4fbec7e9454f8bf6b, type: 3}
+  m_Name: Custom Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 0.8
+  <parent>k__BackingField: {fileID: -6065074836646191838}
+  OnMarkerTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - {m_Target: {fileID: 0}, m_TargetAssemblyTypeName: , m_MethodName: , m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0},
+          m_ObjectArgumentAssemblyTypeName: , m_IntArgument: 0, m_FloatArgument: 0,
+          m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
+--- !u!114 &-1763282787350153782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 3.783333333333333
+  eventName: 
+  markColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+  m_Name: PlayableTimeline
+  m_EditorClassIdentifier: 
+  m_Version: 0
+  m_Tracks:
+  - {fileID: -6065074836646191838}
+  m_FixedDuration: 0
+  m_EditorSettings:
+    m_Framerate: 60
+    m_ScenePreview: 1
+  m_DurationMode: 0
+  m_MarkerTrack: {fileID: 0}
+--- !u!114 &782773261526323899
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 2.6166666666666667
+  eventName: 
+  markColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2969986843855833149
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5964a56f5448b40ad8a768b3091a74, type: 3}
+  m_Name: Simple Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 1.55
+  <parent>k__BackingField: {fileID: -6065074836646191838}
+  eventName: 
+--- !u!114 &3732743158924952703
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 2.4833333333333334
+  eventName: OpenDoor
+  markColor: {r: 0.9622642, g: 0.3169445, b: 0, a: 1}
+--- !u!114 &4892788819859691679
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 7.3
+  eventName: "\uC57C\uD638"
+  markColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6235967245101988368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 8
+  eventName: 
+  markColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6421239471522744755
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 4.783333333333333
+  eventName: Opendoor
+  markColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &8404886228359605541
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f1b44f5f1154140b8ef3c8719caf42, type: 3}
+  m_Name: Unity Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 5.533333333333333
+  eventName: "\uC57C\uD638"
+  markColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &8878763921380815964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5964a56f5448b40ad8a768b3091a74, type: 3}
+  m_Name: Simple Event Marker
+  m_EditorClassIdentifier: 
+  m_Time: 4.45
+  <parent>k__BackingField: {fileID: -6065074836646191838}
+  eventName: 

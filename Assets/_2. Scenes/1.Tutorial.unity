@@ -8016,8 +8016,8 @@ MonoBehaviour:
   m_Camera: {fileID: 3805075969887655823}
   m_OriginBaseGameObject: {fileID: 935436191465711233}
   m_CameraFloorOffsetObject: {fileID: 8601333838336966522}
-  m_RequestedTrackingOriginMode: 2
-  m_CameraYOffset: 1.1176
+  m_RequestedTrackingOriginMode: 1
+  m_CameraYOffset: 2
 --- !u!4 &3238075120754499263
 Transform:
   m_ObjectHideFlags: 0
@@ -11668,23 +11668,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hapticOnActivated:
-    intensity: 0.348
-    duration: 0.136
+    intensity: 1
+    duration: 0.2
   hapticOnDectivated:
     intensity: 0
     duration: 0
   hapticHoverEnterd:
-    intensity: 0.053
-    duration: 0.068
+    intensity: 0
+    duration: 0
   hapticHoverEXited:
-    intensity: 0.076
-    duration: 0.076
+    intensity: 0
+    duration: 0
   hapticSelectEnterd:
-    intensity: 0.485
-    duration: 0.492
+    intensity: 0
+    duration: 0
   hapticSelectExited:
-    intensity: 0.462
-    duration: 0.462
+    intensity: 0
+    duration: 0
 --- !u!1 &8601333838336966522
 GameObject:
   m_ObjectHideFlags: 0
