@@ -31,20 +31,29 @@ public class IKTargetFollowVRRig : MonoBehaviour
     public Transform headIK;
     public Vector3 headIKOffset;
 
-    public Transform avatarRoot; 
-    public Transform vrCamera; 
-    private float avatarEyeHeight = 1.6f; //아바타 눈높이
-    private Vector3 initialHeadBodyOffset; 
+    public Transform avatarRoot;
+    public Transform vrCamera;
+    public float avatarEyeHeight = 1.6f; //아바타 눈높이
+    private Vector3 initialHeadBodyOffset;
+    [Header("아바타")]
+
+    public Transform avatarFoot;
+    public Transform avatarEye;
+    public Transform cameraOffset;
+
 
     private IEnumerator Start()
     {
+        avatarEyeHeight = Vector3.Distance(avatarEye.position, avatarFoot.position);
+
+        Debug.Log($"avatarEyeHeight : {avatarEyeHeight}");
         //퀘스트 초기화 대기 시간
         yield return new WaitForSeconds(1.5f);
         headMap();
 
         //플레이어의 눈 높이를 가져옴
-        float playerEyeHeight = vrCamera.position.y;
-
+        float playerEyeHeight = vrCamera.transform.position.y;
+        Debug.Log($"playerEyeHeight : {playerEyeHeight}");
         //아바타의 눈 높이를 기준으로 플레이어의 실제 눈높이에 비례해 아바타 크기를 조정함
         //너무 작은 값이 들어가면 문제가 생길 수 있어서 최소 값을 0.01로 설정
         float scaleFactor = Mathf.Max(playerEyeHeight / avatarEyeHeight, 0.01f);
